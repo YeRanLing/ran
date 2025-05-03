@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宋宇，生日快乐</title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('resource/img/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        header {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background: rgba(173, 216, 230, 0.8); 
+            color: #000;
+        }
+        .container {
+            position: relative;
+            width: 80%;
+            max-width: 1000px;
+            height: 70%;
+            max-height: 600px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .container video {
+            width: 80%;
+            height: 80%;
+            border-radius: 10px;
+        }
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            text-align: center;
+            padding: 5px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./personal/index.html">Personal</a></li>
+                <li><a href="./essays/index.html">Essays</a></li>
+                <li><a href="./files/index.html">Files</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#craft">Craft</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <video controls>
+            <source src="resource/video/video.mp4" type="video/mp4">
+            Can't play.
+        </video>
+    </div>
+
+    <footer>
+        <p>2025.5.20 叶染泠</p>
+    </footer>
+</body>
+</html>
