@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal</title>
+    <style>
+        @font-face {
+            font-family: 'TestFont';
+            src: url('./resource/font/font1.ttf') format('truetype');
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('resource/img/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        header {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: rgba(173, 216, 230, 0.8); /* 淡蓝色半透明 */
+            color: #000;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            height: 50%; /* 设置高度为50% */
+            transition: transform 0.5s;
+            position: relative;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: url('./resource/img/profile.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .profile-name {
+            margin: 20px 0;
+            font-size: 24px;
+            font-family: 'TestFont', Arial, sans-serif; /* 确保使用TestFont */
+            font-weight: bold;
+        }
+
+        .profile-motto {
+            margin: 10px 0;
+            font-size: 18px;
+            font-family: 'TestFont', Arial, sans-serif; /* 使用TestFont */
+            text-align: center;
+            color: #555;
+        }
+
+        .contact-options {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            right: 100px; /* 调整向左移动 */
+            height: 100%;
+            justify-content: center; /* 使选项在右侧居中 */
+            transform: translateX(-60%); /* 向左移动 */
+            transition: transform 0.5s ease;
+        }
+
+        .divider {
+            display: none;
+            width: 1px;
+            height: 100%;
+            background-color: #ccc;
+            margin: 0 20px;
+        }
+
+        .contact-options a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px 0;
+            transition: color 0.3s;
+        }
+
+        .contact-options a:hover {
+            color: #000;
+        }
+
+        .wechat-popup {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 50%;
+            width: 300px; /* 增大图片尺寸 */
+            height: 300px; /* 增大图片尺寸 */
+            background: url('./resource/img/wechat.jpg') no-repeat center center;
+            background-size: cover;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            text-align: center;
+            padding: 5px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#" id="contactLink">Contact</a></li>
+            <li><a href="#personal">Personal</a></li>
+            <li><a href="#eternity">Eternity</a></li>
+            <li><a href="#preference">Preference</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="profile-container">
+    <div class="profile-info">
+        <div class="profile-pic"></div>
+        <div class="profile-name">叶染泠</div>
+        <div class="profile-motto">醉后不知天在水，满船清梦压星河。</div>
+    </div>
+    <div class="divider"></div>
+    <div class="contact-options">
+        <a href="https://space.bilibili.com/676037338?spm_id_from=333.337.0.0">Bilibili</a>
+        <a href="." class="wechat-link">WeChat</a>
+        <a href="https://github.com/YeRanLing">Github</a>
+        <a href="#" id="backLink">Back</a>
+    </div>
+</div>
+
+<div class="wechat-popup" id="wechatPopup"></div>
+
+<footer>
+    <p>&copy; 2024 叶染泠</p>
+</footer>
+
+<script>
+    let contactClicked = false;
+
+    document.getElementById('contactLink').addEventListener('click', function() {
+        if (!contactClicked) {
+            document.querySelector('.profile-info').style.transform = 'translateX(-60%)';
+            document.querySelector('.divider').style.display = 'block';
+            document.querySelector('.contact-options').style.display = 'flex';
+            contactClicked = true;
+        } else {
+            document.querySelector('.profile-info').style.transform = 'translateX(0)';
+            document.querySelector('.divider').style.display = 'none';
+            document.querySelector('.contact-options').style.display = 'none';
+            contactClicked = false;
+        }
+    });
+
+    document.getElementById('backLink').addEventListener('click', function() {
+        document.querySelector('.profile-info').style.transform = 'translateX(0)';
+        document.querySelector('.divider').style.display = 'none';
+        document.querySelector('.contact-options').style.display = 'none';
+        contactClicked = false;
+    });
+
+    document.querySelector('.wechat-link').addEventListener('mouseover', function() {
+        document.getElementById('wechatPopup').style.display = 'block';
+    });
+
+    document.querySelector('.wechat-link').addEventListener('mouseout', function() {
+        document.getElementById('wechatPopup').style.display = 'none';
+    });
+</script>
+</body>
+</html>
